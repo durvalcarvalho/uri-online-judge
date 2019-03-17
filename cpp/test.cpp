@@ -1,23 +1,36 @@
 #include <iostream>
-#include <string>
 #include <algorithm>
-#include <iterator>
 #include <vector>
-#include <boost/algorithm/string.hpp>
- 
-template <class Container>
-void split(const std::string& str, Container& cont,
-              const std::string& delims = " ")
-{
-    boost::split(cont, str, boost::is_any_of(delims));
-}
+
+using namespace std;
  
 int main()
 {
-    std::string str = "The quick brown fox jumps over the lazy dog";
+    vector<int> nums (10);
 
-    std::vector<std::string> words;
-    split(str, words);
-    std::copy(words.begin(), words.end(),
-         std::ostream_iterator<std::string>(std::cout, "\n"));
+    // for(int i=0; i<20; i = i + 2)
+    // {
+    //     nums.push_back(i);
+    //     nums.push_back(i);
+    // }
+
+    for(auto i: nums)
+        cout << i << " ";
+    cout << endl << endl;
+
+    // vector<int>::iterator it = find(nums.begin(), nums.end(), 10);
+    // // nums.erase(remove(nums.begin(), nums.end(), 14), nums.end());
+
+    // if(it != nums.end())
+    // {
+    //     // boots.erase(remove(boots.begin(), boots.end(), aux2), boots.end());
+    //     nums.erase(it);
+    //     // pairs++;
+    // }
+
+    // for(auto i: nums)
+    //     cout << i << " ";
+    // cout << endl << endl;    
+
+    return 0;
 }
